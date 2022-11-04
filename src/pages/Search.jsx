@@ -60,18 +60,15 @@ class Search extends Component {
         </form>
         {text
         && (
-          <div>
-            {albums.length
-            && (
-              <h2>
-                Resultado de álbuns de:
-                {' '}
-                { artist }
-              </h2>
-            )}
-            {
-              albums.length
-                ? albums.map((album) => (
+          albums.length
+            ? (
+              <div>
+                <h2>
+                  Resultado de álbuns de:
+                  {' '}
+                  { artist }
+                </h2>
+                {albums.map((album) => (
                   <div key={ album.collectionId }>
                     <img
                       alt={ album.collectionName }
@@ -86,10 +83,10 @@ class Search extends Component {
                       Detalhes
                     </Link>
                   </div>
+                ))}
+              </div>
+            ) : <span>Nenhum álbum foi encontrado</span>
 
-                )) : <span>Nenhum álbum foi encontrado</span>
-            }
-          </div>
         )}
       </div>
     );
