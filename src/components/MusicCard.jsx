@@ -22,11 +22,13 @@ class MusicCard extends Component {
   };
 
   handleFavorites = async (infos, { checked }) => {
+    const { callback } = this.props;
     this.setState({ isLoading: true });
     if (checked) {
       await addSong(infos);
     } else {
       await removeSong(infos);
+      await callback();
     }
     await this.handleFavoriteMusics();
     this.setState({ isLoading: false });
@@ -53,7 +55,7 @@ class MusicCard extends Component {
                 .
               </audio>
               <label
-                htmlFor="favorites"
+                htmlFor={ track.trackId }
               >
                 Favorita
                 <input
@@ -78,6 +80,11 @@ class MusicCard extends Component {
 
 MusicCard.propTypes = {
   album: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  callback: PropTypes.func,
+};
+
+MusicCard.defaultProps = {
+  callback: () => {},
 };
 
 export default MusicCard;
