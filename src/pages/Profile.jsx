@@ -30,7 +30,7 @@ class Profile extends Component {
           <p>{ name }</p>
           <p>{ description }</p>
           <p>{ email }</p>
-          <Link to="/profile/edit">Editar perfil</Link>
+          <Link to="/profile/edit"><p>Editar perfil</p></Link>
         </section>
       </div>
     );
