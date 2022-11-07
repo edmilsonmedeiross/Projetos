@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.form-edit {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  width: 100%;
+  margin-top: 100px;
+}

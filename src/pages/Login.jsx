@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { createUser } from '../services/userAPI';
-import Loading from './Loading';
+import Loading from '../components/Loading';
+import Header from '../components/Header';
 
 class Login extends Component {
   state = {
@@ -35,6 +36,7 @@ class Login extends Component {
             <div
               data-testid="page-login"
             >
+              <Header />
               <form>
                 <label htmlFor="user">
                   <input

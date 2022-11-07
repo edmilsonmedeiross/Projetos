@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
+import Header from '../components/Header';
 
 class Album extends Component {
   state = {
@@ -19,14 +20,13 @@ class Album extends Component {
     const { album, info } = this.state;
     return (
       <div>
+        <Header />
         <div
           data-testid="page-album"
-        >
-          Album
-        </div>
+        />
         <img src={ info.artworkUrl100 } alt={ info.collectionName } />
-        <span data-testid="artist-name">{ info.artistName }</span>
-        <span data-testid="album-name">{ info.collectionName }</span>
+        <h2 data-testid="artist-name">{ info.artistName }</h2>
+        <h4 data-testid="album-name">{ info.collectionName }</h4>
         <div>
           <ol>
             <MusicCard album={ album } />

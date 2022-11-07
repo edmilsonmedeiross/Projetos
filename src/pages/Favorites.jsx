@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MusicCard from '../components/MusicCard';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
+import Header from '../components/Header';
 
 class Favorites extends Component {
   constructor() {
@@ -24,11 +25,10 @@ class Favorites extends Component {
 
     return (
       <div>
+        <Header />
         <div
           data-testid="page-favorites"
-        >
-          Favorites
-        </div>
+        />
         <ol>
           <MusicCard callback={ this.handlePageFavorite } album={ favoriteSongs } />
         </ol>

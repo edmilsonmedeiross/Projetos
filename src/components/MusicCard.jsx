@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
-import Loading from '../pages/Loading';
+import Loading from './Loading';
 
 class MusicCard extends Component {
   constructor() {
@@ -43,6 +43,9 @@ class MusicCard extends Component {
         {
           album.map((track) => (
             <div key={ track.trackName }>
+              <p>
+                { track.artistName }
+              </p>
               <li>
                 { track.trackName }
               </li>

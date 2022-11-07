@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { updateUser, getUser } from '../services/userAPI';
-import Loading from './Loading';
+import Loading from '../components/Loading';
+import Header from '../components/Header';
 
 class ProfileEdit extends Component {
   state = {
@@ -55,13 +56,16 @@ class ProfileEdit extends Component {
       image, isButtonLocked, emailIsValid, isLoading } = this.state;
     return (
       <div>
+        <Header />
         <div
           data-testid="page-profile-edit"
-        >
-          Editar perfil
-        </div>
+        />
         {isLoading && <Loading />}
-        <form onChange={ this.hadleValidateButton }>
+        <fieldset
+          onChange={ this.hadleValidateButton }
+          className="form-edit"
+        >
+          Editar Perfil
           <label htmlFor="name">
             <input
               data-testid="edit-input-name"
@@ -105,7 +109,7 @@ class ProfileEdit extends Component {
               placeholder="Insira um link"
             />
           </label>
-        </form>
+        </fieldset>
         <button
           data-testid="edit-button-save"
           type="button"

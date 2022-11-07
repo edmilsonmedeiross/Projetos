@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
-import Loading from './Loading';
+import Loading from '../components/Loading';
+import Header from '../components/Header';
 
 class Profile extends Component {
   state = {
@@ -16,18 +17,16 @@ class Profile extends Component {
   }
 
   render() {
-    const { person: { name, image, email, description }, isLoading } = this.state;
+    const { person: { name, email, description }, isLoading } = this.state;
     return (
       <div>
+        <Header />
         <div
           data-testid="page-profile"
-        >
-          Profile
-        </div>
+        />
         {isLoading && <Loading />}
         <section>
-          <img data-testid="profile-image" src={ image } alt={ name } />
-          <p>{ name }</p>
+          <h4>{ name }</h4>
           <p>{ description }</p>
           <p>{ email }</p>
           <Link to="/profile/edit"><p>Editar perfil</p></Link>

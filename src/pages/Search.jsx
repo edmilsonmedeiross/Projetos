@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Loading from './Loading';
+import Loading from '../components/Loading';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
+import Header from '../components/Header';
 
 class Search extends Component {
   state = {
@@ -28,6 +29,7 @@ class Search extends Component {
     const { search, isLoading, text, artist, albums } = this.state;
     return (
       <div>
+        <Header />
         <span
           data-testid="page-search"
         >
@@ -64,7 +66,7 @@ class Search extends Component {
             ? (
               <div>
                 <h2>
-                  Resultado de álbuns de:
+                  Resultado para álbuns de:
                   {' '}
                   { artist }
                 </h2>
