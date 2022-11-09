@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import getMusics from '../services/musicsAPI';
-import MusicCard from '../components/MusicCard';
-import Header from '../components/Header';
+import getMusics from '../../services/musicsAPI';
+import MusicCard from '../../components/MusicCard';
+import Header from '../../components/Header';
+import './style.css';
 
 class Album extends Component {
   state = {
@@ -19,20 +20,23 @@ class Album extends Component {
   render() {
     const { album, info } = this.state;
     return (
-      <div>
+      <main className="page-album">
         <Header />
-        <div
-          data-testid="page-album"
-        />
-        <img src={ info.artworkUrl100 } alt={ info.collectionName } />
-        <h2 data-testid="artist-name">{ info.artistName }</h2>
-        <h4 data-testid="album-name">{ info.collectionName }</h4>
-        <div>
+        <header className="bar-top">
+          <div>
+            <h4 data-testid="album-name">{ info.collectionName }</h4>
+            <h2 data-testid="artist-name">{ info.artistName }</h2>
+          </div>
+          <section className="album-image">
+            <img src={ info.artworkUrl100 } alt={ info.collectionName } />
+          </section>
+        </header>
+        <section className="card-musics">
           <ol>
             <MusicCard album={ album } />
           </ol>
-        </div>
-      </div>
+        </section>
+      </main>
     );
   }
 }

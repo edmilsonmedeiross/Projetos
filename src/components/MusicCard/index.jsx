@@ -43,10 +43,10 @@ class MusicCard extends Component {
         <h3>Musics</h3>
         {
           album.map((track) => (
-            <div key={ track.trackName }>
-              <p>
-                { track.artistName }
-              </p>
+            <div
+              key={ track.trackName }
+              className="card-music"
+            >
               <li>
                 { track.trackName }
               </li>
@@ -60,18 +60,39 @@ class MusicCard extends Component {
               </audio>
               <label
                 htmlFor={ track.trackId }
+                className="label"
               >
-                Favorita
                 <input
+                  type="checkbox"
+                  id={ track.trackId }
                   onChange={ async ({ target }) => {
                     await this.handleFavorites(track, target);
                   } }
+                  className="favorite"
                   data-testid={ `checkbox-music-${track.trackId}` }
-                  type="checkbox"
                   name="check"
-                  id={ track.trackId }
-                  checked={ favoriteSongs.some((song) => song.trackId === track.trackId) }
+                  checked={ favoriteSongs
+                    .some((song) => song.trackId === track.trackId) }
                 />
+
+                <svg
+                  className="meusvg"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="black"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="1"
+                    d="M4.318 6.318a4.5 4.5
+                       0 000 6.364L12 20.364l7.682-7.682a4.5
+                        4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                  />
+                </svg>
               </label>
             </div>
           ))
