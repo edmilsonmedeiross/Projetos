@@ -1,0 +1,95 @@
+.page-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-top: 400px;
+}
+
+.top-bar-profile {
+  background: linear-gradient(233.85deg, #003be5 9.07%, #00d5e2 61.81%);
+  width: 100%;
+  height: 250px;
+  padding-left: 200px;
+  position: fixed;
+  top: 0;
+}
+
+.top-bar-profile img {
+  position: fixed;
+  width: 240px;
+  height: 240px;
+  left: 326px;
+  top: 111px;
+  filter: drop-shadow(-9px 8px 8px rgba(0, 0, 0, 0.2));
+  border-radius: 240px;
+}
+
+.perfil {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 288px;
+  height: 43.5px;
+  left: 602px;
+  top: 320px;
+  gap: 20px;
+}
+
+.perfil h3 {
+  font-family: "Epilogue" sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 150%;
+  color: #3d495c;
+}
+
+.perfil p {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+}
+
+.perfil h4 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.container-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 500px;
+  font-family: "Epilogue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #3d495c;
+}
+
+.button {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 152px;
+  font-weight: 600;
+  height: 40px;
+  left: 602px;
+  top: 564px;
+  color: white;
+  text-decoration: none;
+
+  background: #003be5;
+  border-radius: 100px;
+}
+
+.button:hover {
+  transition: 0.5s;
+  background: #00d5e2;
+  color: black;
+}

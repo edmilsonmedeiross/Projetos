@@ -29,12 +29,8 @@
 }
 
 .active {
-  align-items: center;
   color: black;
-  display: flex;
-  font-size: 18px;
   font-weight: 600;
-  gap: 10px;
 }
 
 .active svg path {
@@ -64,10 +60,10 @@
   gap: 90px;
 }
 
-.container-nav section img {
+.profile-image-icon img {
   border: 1px solid black;
   border-radius: 20px;
-  height: 40px;
+  min-height: 40px;
   width: 40px;
 }
 

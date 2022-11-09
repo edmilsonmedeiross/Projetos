@@ -64,12 +64,11 @@ class Header extends Component {
             </NavLink>
           </span>
         </div>
-        { isLoading ? <Loading />
-          : (
-            <section>
-              <h3 data-testid="header-user-name">{ name }</h3>
-              <img src={ image } alt={ name } />
-            </section>)}
+        { isLoading && <Loading /> }
+        <section className="profile-image-icon">
+          <h3 data-testid="header-user-name">{ name }</h3>
+          <img src={ image } alt={ name } />
+        </section>
       </aside>
     );
   }

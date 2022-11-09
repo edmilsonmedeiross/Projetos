@@ -20,6 +20,7 @@
   border: 1px solid #3b6bfa;
   border-radius: 100px;
   height: 40px;
+  text-align: center;
   width: 400px;
 }
 
@@ -36,11 +37,19 @@
 .buton-login {
   background-color: #003be5;
   border-radius: 100px;
+  border-style: none;
   color: white;
   font-weight: 600;
   height: 40px;
   text-transform: uppercase;
   width: 400px;
+}
+
+.buton-login:hover {
+  background: #00d5e2;
+  border: 1px solid black;
+  color: black;
+  transition: 0.5s;
 }
 
 .login-container form {

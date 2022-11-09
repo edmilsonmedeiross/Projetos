@@ -4,8 +4,8 @@ import Album from './pages/Album';
 import Favorites from './pages/Favorites/Favorites';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
-import Profile from './pages/Profile';
-import ProfileEdit from './pages/ProfileEdit';
+import Profile from './pages/Profile/Profile';
+import ProfileEdit from './pages/ProfileEdit/ProfileEdit';
 import Search from './pages/Search';
 import './App.css';
 

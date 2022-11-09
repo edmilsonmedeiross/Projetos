@@ -40,7 +40,6 @@ class MusicCard extends Component {
     const { isLoading, favoriteSongs } = this.state;
     return (
       <div>
-        <h3>Musics</h3>
         {
           album.map((track) => (
             <div
