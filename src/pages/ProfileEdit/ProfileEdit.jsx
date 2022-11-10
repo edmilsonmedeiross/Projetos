@@ -58,17 +58,31 @@ class ProfileEdit extends Component {
     return (
       <div>
         <Header />
-        <div
-          data-testid="page-profile-edit"
-        />
         {isLoading && <Loading />}
-        <section className="page- edit">
+        <header
+          className="top-bar-pedit"
+        >
+          <label className="photo-perfil" htmlFor="image">
+            <img src={ image } alt={ name } />
+            <input
+              className="linkp"
+              onChange={ this.handleChange }
+              value={ image }
+              type="text"
+              name="image"
+              id="image"
+              placeholder="Insira um link"
+            />
+          </label>
+        </header>
+        <main className="page- edit">
           <fieldset
             onChange={ this.hadleValidateButton }
             className="form-edit"
           >
-            Editar Perfil
             <label htmlFor="name">
+              <h5>Nome</h5>
+              <p>Fique à vontade para usar seu nome social</p>
               <input
                 data-testid="edit-input-name"
                 onChange={ this.handleChange }
@@ -80,6 +94,8 @@ class ProfileEdit extends Component {
               />
             </label>
             <label htmlFor="email">
+              <h5>Email</h5>
+              <p>Escolha um e-mail que consulte diariamente</p>
               <input
                 data-testid="edit-input-email"
                 onChange={ this.handleChange }
@@ -87,41 +103,32 @@ class ProfileEdit extends Component {
                 type="email"
                 name="email"
                 id="email"
-                placeholder="Digite seu email"
+                placeholder="seu_nome@email.com.br"
               />
             </label>
+            <h5>Descrição</h5>
             <textarea
               data-testid="edit-input-description"
               onChange={ this.handleChange }
               value={ description }
-              placeholder="Insira sua descrição"
+              placeholder="Sobre mim"
               name="description"
               id="description"
-              cols="30"
+              cols="60"
               rows="10"
             />
-            <label htmlFor="image">
-              <input
-                data-testid="edit-input-image"
-                onChange={ this.handleChange }
-                value={ image }
-                type="text"
-                name="image"
-                id="image"
-                placeholder="Insira um link"
-              />
-            </label>
+
+            <button
+              className="botton-save"
+              data-testid="edit-button-save"
+              type="button"
+              onClick={ this.userUpdated }
+              disabled={ isButtonLocked || !emailIsValid }
+            >
+              Salvar
+            </button>
           </fieldset>
-          <button
-            className="botton-save"
-            data-testid="edit-button-save"
-            type="button"
-            onClick={ this.userUpdated }
-            disabled={ isButtonLocked || !emailIsValid }
-          >
-            Salvar
-          </button>
-        </section>
+        </main>
       </div>
     );
   }
